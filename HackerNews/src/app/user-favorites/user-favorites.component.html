@@ -1,0 +1,18 @@
+<p>Submits that the user ha given like</p>
+
+<div *ngFor="let item of favSubmit; index as i;">
+
+  <div class="submitsp">
+
+      <div (click)="gotoWeborSubmit('', item.post)">Submit id: {{item.post}}</div>
+  </div>
+  <hr>
+</div>
+
+<p style="margin-top: 40px;">Comments that the user ha given like</p>
+<div *ngFor="let item2 of favComm; index as i;">
+  <div class="divfelx">
+    <div (click)="gotoRely(item2.comment)">Comment id: {{ item2.comment }}</div>
+  </div>
+  <hr>
+</div>

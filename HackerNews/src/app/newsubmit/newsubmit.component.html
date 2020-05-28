@@ -1,0 +1,23 @@
+<p>newsubmit works!</p>
+
+<form>
+  <div>
+    <label>Title</label>
+    <input type="text" class="form-control" [(ngModel)]="title" name="tit">
+  </div>
+  <div>
+    <label>Url</label>
+    <input type="text" class="form-control" [(ngModel)]="url" name="ur">
+  </div>
+  or
+  <div>
+    <label>Text</label>
+    <input type="text" class="form-control" [(ngModel)]="text" name="te">
+  </div>
+</form>
+
+
+
+<div>
+  <button (click)="login()">Submit</button>
+</div>

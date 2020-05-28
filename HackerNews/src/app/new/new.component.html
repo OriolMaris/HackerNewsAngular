@@ -1,0 +1,19 @@
+<p>new works!</p>
+
+<div *ngFor="let item of new_data; index as i;">
+    <div class="submitsp">
+        <div>{{ i + 1 }}</div>
+        <div (click)="gotoWeborSubmit(item.url, item.id)">{{item.title}}</div>
+        <div *ngIf="item.url != ''">({{item.url}})</div>
+    </div>
+    <div class="submitsp">
+      <div>{{item.likes}} points</div> |
+      <div [routerLink]="['/user', item.author]">user id: {{item.author}}</div> |
+      <div (click)="gotoSubmit(item.id);">{{item.date_added | date:'short':'UTC'}}</div> |
+      <div (click)="gotoSubmit(item.id);">{{item.qttcom}} commnets</div> |
+      <div (click)="likeSubmit(item.id, i)">Like</div> |
+      <div (click)="dislikeSubmit(item.id, i)">Dislike</div>
+  </div>
+
+    <hr>
+</div>

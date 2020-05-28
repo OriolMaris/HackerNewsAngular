@@ -1,0 +1,41 @@
+<p>submit works!</p>
+
+
+<div>
+  <div class="divfelx">
+    <div>{{ submit.title }}</div>
+    <div>({{ submit.path }})</div>
+  </div>
+  <div class="divfelx">
+    <div>{{ submit.likes }} points</div> |
+    <div [routerLink]="['/user', submit.author]">user id: {{ submit.author }}</div> |
+    <div>{{ submit.date_added | date:'short':'UTC'}}</div> |
+    <div>{{ submit.qttcom }} comments</div>
+  </div>
+</div>
+
+<div>
+  <input type="text" class="form-control" [(ngModel)]="comm" name="tex">
+</div>
+<div><button (click)="addComment()">Add comment</button></div>
+
+<hr style="margin-bottom: 30px;">
+
+<div *ngFor="let item of comments; index as i;" [style.marginLeft.px]="item.level*15">
+  <div class="divfelx">
+    <div [routerLink]="['/user', item.author]">user id: {{ item.author }}</div>
+    <div>{{ item.date_added | date:'short':'UTC'}}</div>
+  </div>
+  <div class="divfelx">
+    <div>{{ item.text }}</div>
+  </div>
+  <div class="divfelx">
+    <div (click)="gotoRely(item.id)"><u>Reply</u></div> |
+    <div (click)="likeComment(item.id, item.likes, i)">Like</div> |
+    <div (click)="dislikeComment(item.id, item.likes, i)">Dislike</div>
+  </div>
+
+  <hr>
+</div>
+
+

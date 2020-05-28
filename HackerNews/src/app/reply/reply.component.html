@@ -1,0 +1,32 @@
+<p>reply works!</p>
+
+<!----- >falat ficar el comment al qual fer like <!-->
+<div class="submitsp">
+    <div [routerLink]="['/user', item.author]">author id: {{item.author}}</div> |
+    <div>{{item.date_added | date:'short':'UTC'}}</div>|
+    <div (click)="gotoSubmit()"> Comment of the submit: {{item.submit}}</div>
+    <div *ngIf="item.parent != null"> Reply of the comment {{item.parent}}</div>
+</div>
+<div class="submitsp_comm">
+  <div>{{item.text}}</div> <!--Falta anar a la pagina on totes les submits tenen la mateixa url que la clicada-->
+</div>
+<div class="submitsp">
+    <div>{{item.likes}} points</div> |
+
+
+    <div (click)="likeComment(item.id)">Like</div> |
+    <div (click)="dislikeComment(item.id)">Dislike</div>
+</div>
+
+<form>
+  <div style="margin-top: 30px;">
+    <label>Reply</label>
+    <input type="text" class="form-control" [(ngModel)]="text" name="tit">
+  </div>
+</form>
+
+
+
+<div>
+  <button (click)="AddReply()">Reply</button>
+</div>

@@ -1,0 +1,16 @@
+<p>ask works!</p>
+<div *ngFor="let item of index_data; index as i;">
+  <div class="asks">
+      <div>{{ i + 1 }}</div>
+      <div (click)="gotoWeborSubmit(item.url, item.id)">Ask HN: {{item.title}}</div>
+  </div>
+  <div class="asks">
+      <div>{{item.likes}} points</div> |
+      <div [routerLink]="['/user', item.author]">user id: {{item.author}}</div> |
+      <div (click)="gotoWeborSubmit(item.url, item.id)">{{item.date_added | date:'short':'UTC'}}</div> |
+      <div>{{item.qttcom}} commnets</div> |
+      <div (click)="likeSubmit(item.id, i)">Like</div> |
+      <div (click)="dislikeSubmit(item.id, i)">Dislike</div>
+  </div>
+  <hr>
+</div>

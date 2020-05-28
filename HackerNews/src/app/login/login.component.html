@@ -1,0 +1,19 @@
+<p>login works!</p>
+
+<form>
+  <div>
+    <label>Name</label>
+    <input type="text" class="form-control" [(ngModel)]="username" name="nam">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="text" class="form-control" [(ngModel)]="password" name="pas">
+  </div>
+</form>
+
+
+
+<div>
+  <button (click)="login()">LogIn</button>
+</div>
+

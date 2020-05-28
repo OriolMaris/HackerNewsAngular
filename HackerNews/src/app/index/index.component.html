@@ -1,0 +1,20 @@
+<p>index works!</p>
+
+<div *ngFor="let item of index_data; index as i;">
+
+    <div class="submitsp">
+        <div>{{ i + 1 }}</div>
+        <div (click)="gotoWeborSubmit(item.url, item.id)">{{item.title}}</div>
+        <div *ngIf="item.url != ''">({{item.url}})</div> <!--Falta anar a la pagina on totes les submits tenen la mateixa url que la clicada-->
+    </div>
+    <div class="submitsp">
+        <div>{{item.likes}} points</div> |
+        <div [routerLink]="['/user', item.author]">user id: {{item.author}}</div> |
+        <div (click)="gotoSubmit(item.id);">{{item.date_added | date:'short':'UTC'}}</div> |
+        <div (click)="gotoSubmit(item.id);">{{item.qttcom}} commnets</div> |
+        <div (click)="likeSubmit(item.id, i)">Like</div> |
+      <div (click)="dislikeSubmit(item.id, i)">Dislike</div>
+    </div>
+
+    <hr>
+</div>

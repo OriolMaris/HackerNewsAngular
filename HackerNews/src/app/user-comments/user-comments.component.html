@@ -1,0 +1,26 @@
+<p>user-comments works!</p>
+<div *ngFor="let item of new_data; index as i;">
+  <div class="submitsp">
+      <div [routerLink]="['/user', item.author]">author id: {{item.author}}</div> |
+      <div>{{item.date_added | date:'short':'UTC'}}</div>|
+      <div (click)="gotoSubmit(item.submit)"> Comment of the submit: {{item.submit}}</div>
+      <div *ngIf="item.parent != null" >
+        <div (click)="gotoRely(item.parent)">
+          Reply of the comment {{item.parent}}
+        </div>
+      </div>
+  </div>
+  <div class="submitsp_comm">
+    <div>{{item.text}}</div> <!--Falta anar a la pagina on totes les submits tenen la mateixa url que la clicada-->
+  </div>
+  <div class="submitsp">
+      <div>{{item.likes}} points</div> |
+
+
+      <div (click)="likeComment(item.id, item.likes, i)">Like</div> |
+      <div (click)="dislikeComment(item.id, item.likes, i)">Dislike</div>
+  </div>
+
+
+  <hr>
+</div>

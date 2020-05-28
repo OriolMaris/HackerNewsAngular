@@ -1,0 +1,21 @@
+<header>
+  <div class="headerPage">
+    <div [routerLink]="['']">HackerNews</div> |
+    <div [routerLink]="['/new']"> New </div> |
+    <div [routerLink]="['/threats']"> Threats </div> |
+    <div [routerLink]="['/comments']"> Comments </div> |
+    <div [routerLink]="['/ask']"> Ask </div> |
+    <div [routerLink]="['/submit']"> Submit </div> |
+    <div *ngIf="loggedIn == true" style="margin-left: 40%;" (click)="signOut()">Logout amb Google</div> |
+    <div *ngIf="loggedIn == true" (click)="logout()">Logout</div>
+    <div *ngIf="loggedIn == true" (click)="goToAuthor(user.id)"> {{user.name}}  </div>
+    <div *ngIf="loggedIn == false" style="margin-left: 40%;" (click)="signInWithGoogle()"> Login amb Goolge </div> |
+    <div *ngIf="loggedIn == false"  [routerLink]="['/login']"> Login </div>
+  </div>
+</header>
+
+<body>
+  <div>
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</body>
