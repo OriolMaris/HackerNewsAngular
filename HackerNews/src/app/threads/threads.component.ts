@@ -15,9 +15,8 @@ export class ThreadsComponent implements OnInit {
   index: any = [];
   constructor(private route: ActivatedRoute, private api: HerokuService, private rot: Router){}
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
-    this.api.GetUserComments(this.id).subscribe((data: any) => {
+    var user = JSON.parse(localStorage.getItem('user'));
+    this.api.GetUserComments(user).subscribe((data: any) => {
       console.log(data);
       this.new_data = data;
     });

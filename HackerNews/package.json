@@ -23,10 +23,13 @@
     "@angular/router": "~9.1.7",
     "angular4-social-login": "^1.1.1",
     "angularx-social-login": "^2.3.1",
+    "connect": "^3.7.0",
     "express": "^4.17.1",
     "material-design-icons-iconfont": "^5.0.1",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
+    "serve-static": "^1.14.1",
+    "server.js": "^1.0.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
@@ -52,6 +55,17 @@
   },
   "engines": {
     "node": "10.14.2",
-      "npm": "6.4.1"
-  }
+    "npm": "6.4.1"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "HackerNews",
+  "license": "HackerNews",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "/"
 }
