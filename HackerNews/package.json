@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lite": "lite-server",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +23,9 @@
     "@angular/router": "~9.1.7",
     "angular4-social-login": "^1.1.1",
     "angularx-social-login": "^2.3.1",
+    "express": "^4.17.1",
     "material-design-icons-iconfont": "^5.0.1",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -45,5 +49,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
+  },
+  "engines": {
+    "node": "10.14.2",
+      "npm": "6.4.1"
   }
 }
